@@ -3,58 +3,9 @@
     {
       "message": " ",
       "attention": false,
-      "tech": "Beáta Bincze",
-      "date": "2023-01-10T05:31:01.985Z",
+      "tech": "Szilveszter Spáth",
+      "date": "2023-02-14T04:35:43.403Z",
       "id": 1
-    },
-    {
-      "message": " ",
-      "attention": false,
-      "tech": "Jácinta Papp",
-      "date": "2023-01-10T05:34:37.403Z",
-      "id": 2
-    },
-    {
-      "message": " ",
-      "attention": false,
-      "tech": "Zsolt Plázár",
-      "date": "2023-01-10T05:34:45.236Z",
-      "id": 3
-    },
-    {
-      "message": " ",
-      "attention": false,
-      "tech": "Péter Temesváry",
-      "date": "2023-01-10T05:34:50.149Z",
-      "id": 4
-    },
-    {
-      "message": " ",
-      "attention": false,
-      "tech": "Eszter Nagy",
-      "date": "2023-01-10T05:34:58.342Z",
-      "id": 5
-    },
-    {
-      "message": " ",
-      "attention": false,
-      "tech": "Csaba Kötcsei",
-      "date": "2023-01-10T05:35:04.071Z",
-      "id": 6
-    },
-    {
-      "message": " ",
-      "attention": false,
-      "tech": "Bence Ács",
-      "date": "2023-01-10T05:36:06.021Z",
-      "id": 8
-    },
-    {
-      "message": " ",
-      "attention": false,
-      "tech": "Don LaRue",
-      "date": "2023-01-10T05:36:18.384Z",
-      "id": 9
     }
   ],
   "techs": [
@@ -102,6 +53,26 @@
       "firstName": "Csaba",
       "lastName": "Kötcsei",
       "id": 12
+    },
+    {
+      "firstName": "Bencze",
+      "lastName": "Junior",
+      "id": 13
+    },
+    {
+      "firstName": "Bence",
+      "lastName": "N",
+      "id": 14
+    },
+    {
+      "firstName": "Tamás",
+      "lastName": "Molnár",
+      "id": 15
+    },
+    {
+      "firstName": "Júlia",
+      "lastName": "Andorka",
+      "id": 16
     }
   ]
 }
