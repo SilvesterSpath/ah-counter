@@ -3,71 +3,71 @@ import {
   ADD_TECH,
   DELETE_TECH,
   SET_LOADING,
-  TECHS_ERROR
+  TECHS_ERROR,
 } from './types';
 
-// Get techs from server
-export const getTechs = () => async dispatch => {
+// Get persons from server
+export const getTechs = () => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch('/techs');
+    const res = await fetch('/api/persons');
     const data = await res.json();
 
     dispatch({
       type: GET_TECHS,
-      payload: data
+      payload: data,
     });
   } catch (err) {
     dispatch({
       type: TECHS_ERROR,
-      payload: err.response.statusText
+      payload: err.response.statusText,
     });
   }
 };
 
 // Add technician to server
-export const addTech = tech => async dispatch => {
+export const addTech = (tech) => async (dispatch) => {
   try {
     setLoading();
 
-    const res = await fetch('/techs', {
+    const res = await fetch('/api/persons', {
       method: 'POST',
       body: JSON.stringify(tech),
       headers: {
-        'Content-Type': 'application/json'
-      }
+        'Content-Type': 'application/json',
+      },
     });
     const data = await res.json();
 
     dispatch({
       type: ADD_TECH,
-      payload: data
+      payload: data,
     });
   } catch (err) {
     dispatch({
       type: TECHS_ERROR,
-      payload: err.response.statusText
+      payload: err.response.statusText,
     });
   }
 };
 
-export const deleteTech = id => async dispatch => {
+export const deleteTech = (id) => async (dispatch) => {
   try {
     setLoading();
 
-    await fetch(`/techs/${id}`, {
-      method: 'DELETE'
+    await fetch(`/api/persons/${id}`, {
+      method: 'DELETE',
     });
 
     dispatch({
       type: DELETE_TECH,
-      payload: id
+      payload: id,
     });
   } catch (err) {
     dispatch({
       type: TECHS_ERROR,
-      payload: err.response.statusText
+      payload: err.response.statusText,
     });
   }
 };
@@ -75,6 +75,6 @@ export const deleteTech = id => async dispatch => {
 // Set loading to true
 export const setLoading = () => {
   return {
-    type: SET_LOADING
+    type: SET_LOADING,
   };
 };

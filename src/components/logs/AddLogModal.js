@@ -6,29 +6,26 @@ import { addLog } from '../../actions/logActions';
 import M from 'materialize-css/dist/js/materialize.min.js';
 
 const AddLogModal = ({ addLog }) => {
-  const [message, setMessage] = useState(' ');
-  const [attention, setAttention] = useState(false);
-  const [tech, setTech] = useState('');
+  const [count, setMessage] = useState(' ');
+  const [person, setTech] = useState('');
 
   const onSubmit = () => {
-    if (message === '' || tech === '') {
+    if (count === '' || person === '') {
       M.toast({ html: 'Please enter a message and tech' });
     } else {
       const newLog = {
-        message,
-        attention,
-        tech,
+        count,
+        person,
         date: new Date(),
       };
 
       addLog(newLog);
 
-      M.toast({ html: `Log added by ${tech}` });
+      M.toast({ html: `Log added by ${person}` });
 
       // Clear Fields
       setMessage(' ');
       setTech('');
-      setAttention(false);
     }
   };
 
@@ -41,7 +38,7 @@ const AddLogModal = ({ addLog }) => {
             <input
               type='text'
               name='message'
-              value={message}
+              value={count}
               onChange={(e) => setMessage(e.target.value)}
             />
             {/*             <label htmlFor='message' className='active'>
@@ -53,8 +50,8 @@ const AddLogModal = ({ addLog }) => {
         <div className='row'>
           <div className='input-field'>
             <select
-              name='tech'
-              value={tech}
+              name='person'
+              value={person}
               className='browser-default'
               onChange={(e) => setTech(e.target.value)}
             >
@@ -63,23 +60,6 @@ const AddLogModal = ({ addLog }) => {
               </option>
               <TechSelectOptions />
             </select>
-          </div>
-        </div>
-
-        <div className='row'>
-          <div className='input-field'>
-            <p>
-              <label>
-                <input
-                  type='checkbox'
-                  className='filled-in'
-                  checked={attention}
-                  value={attention}
-                  onChange={(e) => setAttention(!attention)}
-                />
-                <span>Needs Attention</span>
-              </label>
-            </p>
           </div>
         </div>
       </div>

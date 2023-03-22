@@ -27,7 +27,7 @@ const EditLogModal = ({ current, updateLog }) => {
         message,
         attention,
         tech,
-        date: new Date()
+        date: new Date(),
       };
 
       updateLog(updLog);
@@ -50,7 +50,7 @@ const EditLogModal = ({ current, updateLog }) => {
               type='text'
               name='message'
               value={message}
-              onChange={e => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
         </div>
@@ -61,10 +61,10 @@ const EditLogModal = ({ current, updateLog }) => {
               name='tech'
               value={tech}
               className='browser-default'
-              onChange={e => setTech(e.target.value)}
+              onChange={(e) => setTech(e.target.value)}
             >
               <option value='' disabled>
-                Select Technician
+                Select Speaker
               </option>
               <TechSelectOptions />
             </select>
@@ -80,7 +80,7 @@ const EditLogModal = ({ current, updateLog }) => {
                   className='filled-in'
                   checked={attention}
                   value={attention}
-                  onChange={e => setAttention(!attention)}
+                  onChange={(e) => setAttention(!attention)}
                 />
                 <span>Needs Attention</span>
               </label>
@@ -103,19 +103,16 @@ const EditLogModal = ({ current, updateLog }) => {
 
 const modalStyle = {
   width: '75%',
-  height: '75%'
+  height: '75%',
 };
 
 EditLogModal.propTypes = {
   current: PropTypes.object,
-  updateLog: PropTypes.func.isRequired
+  updateLog: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  current: state.log.current
+const mapStateToProps = (state) => ({
+  current: state.log.current,
 });
 
-export default connect(
-  mapStateToProps,
-  { updateLog }
-)(EditLogModal);
+export default connect(mapStateToProps, { updateLog })(EditLogModal);

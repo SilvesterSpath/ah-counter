@@ -12,8 +12,8 @@ const TechSelectOptions = ({ getTechs, tech: { techs, loading } }) => {
   return (
     !loading &&
     techs !== null &&
-    techs.map(t => (
-      <option key={t.id} value={`${t.firstName} ${t.lastName}`}>
+    techs.map((t) => (
+      <option key={t._id} value={`${t.firstName} ${t.lastName}`}>
         {t.firstName} {t.lastName}
       </option>
     ))
@@ -22,14 +22,11 @@ const TechSelectOptions = ({ getTechs, tech: { techs, loading } }) => {
 
 TechSelectOptions.propTypes = {
   tech: PropTypes.object.isRequired,
-  getTechs: PropTypes.func.isRequired
+  getTechs: PropTypes.func.isRequired,
 };
 
-const mapStateToProps = state => ({
-  tech: state.tech
+const mapStateToProps = (state) => ({
+  tech: state.tech,
 });
 
-export default connect(
-  mapStateToProps,
-  { getTechs }
-)(TechSelectOptions);
+export default connect(mapStateToProps, { getTechs })(TechSelectOptions);

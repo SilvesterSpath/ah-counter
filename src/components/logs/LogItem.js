@@ -7,15 +7,17 @@ import Button from '../layout/Button';
 
 import M from 'materialize-css/dist/js/materialize.min.js';
 
-const LogItem = ({ log, deleteLog, setCurrent }) => {
+const LogItem = ({ log, deleteLog }) => {
   const [counter, setCounter] = useState({ count: 0 });
 
   const updateCount = (value) => {
-    setCounter((prev) => ({ count: prev.count + value }));
+    setCounter((prev) => ({
+      count: prev.count + value <= 0 ? 0 : prev.count + value,
+    }));
   };
 
   const onDelete = () => {
-    deleteLog(log.id);
+    deleteLog(log._id);
     M.toast({ html: 'Log Deleted' });
   };
 
@@ -24,7 +26,7 @@ const LogItem = ({ log, deleteLog, setCurrent }) => {
       <div>
         <span className='grey-text'>
           {/* <span className='black-text'>ID #{log.id}</span> */} Speaker:{' '}
-          <span className='black-text'>{log.tech}</span> on{' '}
+          <span className='black-text'>{log.person}</span> on{' '}
           <Moment format='MMMM Do YYYY'>{log.date}</Moment>
         </span>{' '}
         <div style={{ display: 'flex', justifyContent: 'right' }}>

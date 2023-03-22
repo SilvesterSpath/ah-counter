@@ -14,7 +14,7 @@ const AddTechModal = ({ addTech }) => {
     } else {
       addTech({
         firstName,
-        lastName
+        lastName,
       });
 
       M.toast({ html: `${firstName} ${lastName} was added as a tech` });
@@ -28,14 +28,14 @@ const AddTechModal = ({ addTech }) => {
   return (
     <div id='add-tech-modal' className='modal'>
       <div className='modal-content'>
-        <h4>New Technician</h4>
+        <h4>New Speaker</h4>
         <div className='row'>
           <div className='input-field'>
             <input
               type='text'
               name='firstName'
               value={firstName}
-              onChange={e => setFirstName(e.target.value)}
+              onChange={(e) => setFirstName(e.target.value)}
             />
             <label htmlFor='firstName' className='active'>
               First Name
@@ -49,7 +49,7 @@ const AddTechModal = ({ addTech }) => {
               type='text'
               name='lastName'
               value={lastName}
-              onChange={e => setLastName(e.target.value)}
+              onChange={(e) => setLastName(e.target.value)}
             />
             <label htmlFor='lastName' className='active'>
               Last Name
@@ -71,10 +71,7 @@ const AddTechModal = ({ addTech }) => {
 };
 
 AddTechModal.propTypes = {
-  addTech: PropTypes.func.isRequired
+  addTech: PropTypes.func.isRequired,
 };
 
-export default connect(
-  null,
-  { addTech }
-)(AddTechModal);
+export default connect(null, { addTech })(AddTechModal);
