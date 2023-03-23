@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "cors": "^2.8.5",
     "express-validator": "^6.15.0",
     "materialize-css": "^1.0.0",
     "moment": "^2.24.0",
@@ -17,7 +18,7 @@
     "redux-thunk": "^2.3.0"
   },
   "scripts": {
-    "start": "set PORT=3001 && react-scripts start",
+    "start": "react-scripts start",
     "server": "nodemon server.js",
     "json-server": "json-server --watch db.json --port 5000",
     "dev": "concurrently \"npm start\" \"npm run server\"",
@@ -45,5 +46,5 @@
     "json-server": "^0.17.2",
     "nodemon": "^2.0.21"
   },
-  "proxy": "http://localhost:5001"
+  "proxy": "http://localhost:5000"
 }
