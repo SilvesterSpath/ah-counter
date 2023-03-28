@@ -28,7 +28,13 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
         </p>
       </li>
       {!loading && logs.length === 0 ? (
-        <p className='center'>No speaker to show...</p>
+        <div>
+          <p className='center'>No speaker to show..</p>
+          <p className='center'>
+            Hover over the blue plus sign in the bottom right corner to start
+            adding speakers!
+          </p>
+        </div>
       ) : (
         logs.map((log) => <LogItem log={log} key={log._id} />)
       )}
