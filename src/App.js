@@ -6,6 +6,7 @@ import AddLogModal from './components/logs/AddLogModal';
 import EditLogModal from './components/logs/EditLogModal';
 import AddTechModal from './components/techs/AddTechModal';
 import TechListModal from './components/techs/TechListModal';
+import Footer from './components/layout/Footer';
 import { Provider } from 'react-redux';
 import store from './store';
 
@@ -29,6 +30,7 @@ const App = () => {
           <AddTechModal />
           <TechListModal />
           <Logs />
+          <Footer />
         </div>
       </Fragment>
     </Provider>

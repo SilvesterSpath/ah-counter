@@ -18,7 +18,7 @@ const LogItem = ({ log, deleteLog }) => {
 
   const onDelete = () => {
     deleteLog(log._id);
-    M.toast({ html: 'Log Deleted' });
+    M.toast({ html: 'Speaker Deleted' });
   };
 
   return (

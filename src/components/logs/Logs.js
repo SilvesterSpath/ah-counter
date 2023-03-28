@@ -20,10 +20,15 @@ const Logs = ({ log: { logs, loading }, getLogs }) => {
       <li className='collection-header' style={{ backgroundColor: '#E9FFF5' }}>
         <h4 className='center' style={{ fontWeight: 'bold' }}>
           Ah - Counter
+          <br />
         </h4>
+        <p style={{ display: 'flex', justifyContent: 'center' }}>
+          created by &nbsp;{' '}
+          <span style={{ fontWeight: 'bold' }}>SilvesterSpath</span>
+        </p>
       </li>
       {!loading && logs.length === 0 ? (
-        <p className='center'>No logs to show...</p>
+        <p className='center'>No speaker to show...</p>
       ) : (
         logs.map((log) => <LogItem log={log} key={log._id} />)
       )}
